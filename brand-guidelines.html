@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNITY Brand Guidelines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-dark: #0a0e1a;
+            --navy: #0f1629;
+            --navy-light: #1a2035;
+            --blue-accent: #3b82f6;
+            --blue-light: #60a5fa;
+            --cyan: #06b6d4;
+            --white: #ffffff;
+            --gray-100: #f3f4f6;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gold: #c9a227;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-logo {
+            max-width: 400px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gray-300);
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--white) 0%, var(--blue-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(10, 14, 26, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        nav img {
+            height: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray-300);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--blue-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Logo Section */
+        .logo-display {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .logo-card {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 16/9;
+        }
+
+        .logo-card.light {
+            background: var(--white);
+        }
+
+        .logo-card img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .logo-card-label {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* Meaning Section */
+        .meaning-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .meaning-visual {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .meaning-visual img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .meaning-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .meaning-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .meaning-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--blue-accent), var(--cyan));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.25rem;
+        }
+
+        .meaning-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .meaning-text p {
+            font-size: 0.875rem;
+            color: var(--gray-300);
+        }
+
+        /* Colors Section */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .color-card {
+            background: var(--navy);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .color-swatch {
+            height: 120px;
+        }
+
+        .color-info {
+            padding: 1.5rem;
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-hex {
+            font-family: monospace;
+            font-size: 0.875rem;
+            color: var(--gray-300);
+        }
+
+        .color-usage {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-top: 0.5rem;
+        }
+
+        /* Typography Section */
+        .typo-display {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .typo-sample {
+            margin-bottom: 2rem;
+        }
+
+        .typo-sample:last-child {
+            margin-bottom: 0;
+        }
+
+        .typo-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 0.5rem;
+        }
+
+        .typo-heading {
+            font-size: 3rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--white) 0%, var(--blue-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .typo-subheading {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        .typo-body {
+            font-size: 1rem;
+            color: var(--gray-300);
+            max-width: 600px;
+        }
+
+        /* Mockups Gallery */
+        .mockups-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .mockup-card {
+            background: var(--navy);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .mockup-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .mockup-card.large {
+            grid-column: span 2;
+        }
+
+        .mockup-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mockup-label {
+            padding: 1rem 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-300);
+            border-top: 1px solid var(--navy-light);
+        }
+
+        /* Do's and Don'ts */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .rule-card {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .rule-card.do {
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .rule-card.dont {
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .rule-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .rule-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .rule-card.do .rule-icon {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .rule-card.dont .rule-icon {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .rule-title {
+            font-weight: 600;
+        }
+
+        .rule-list {
+            list-style: none;
+        }
+
+        .rule-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.875rem;
+            color: var(--gray-300);
+        }
+
+        .rule-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--gray-500);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--navy-light);
+        }
+
+        footer p {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo-display,
+            .meaning-grid,
+            .colors-grid,
+            .mockups-grid,
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mockup-card.large {
+                grid-column: span 1;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="synity_v2_01.png" alt="SYNITY" style="filter: brightness(0) invert(1); height: 24px;">
+        <ul>
+            <li><a href="#logo">Logo</a></li>
+            <li><a href="#meaning">Ý nghĩa</a></li>
+            <li><a href="#colors">Màu sắc</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#applications">Ứng dụng</a></li>
+            <li><a href="#rules">Quy tắc</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="synity_v2_01.png" alt="SYNITY Logo" class="hero-logo">
+        <h1>Brand Guidelines</h1>
+        <h2>Kiến trúc sư công nghệ<br>& Chuyển đổi số toàn diện</h2>
+    </section>
+
+    <!-- Logo Section -->
+    <section id="logo">
+        <div class="section-header">
+            <p class="section-label">01 — Logo</p>
+            <h2>Logo chính</h2>
+            <p>Logo SYNITY là wordmark với chữ Y có nét vươn lên đặc trưng, thể hiện khát vọng phát triển và chuyển đổi.</p>
+        </div>
+
+        <div class="logo-display">
+            <div>
+                <div class="logo-card">
+                    <img src="synity_v2_01.png" alt="Logo trên nền tối">
+                </div>
+                <p class="logo-card-label">Logo trắng trên nền Navy</p>
+            </div>
+            <div>
+                <div class="logo-card light">
+                    <img src="synity_v2_01.png" alt="Logo trên nền sáng" style="filter: invert(1);">
+                </div>
+                <p class="logo-card-label">Logo Navy trên nền trắng</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meaning Section -->
+    <section id="meaning">
+        <div class="section-header">
+            <p class="section-label">02 — Ý nghĩa</p>
+            <h2>Câu chuyện thương hiệu</h2>
+            <p>SYNITY = SYN (synthesis/together) + UNITY - Tổng hợp & Thống nhất</p>
+        </div>
+
+        <div class="meaning-grid">
+            <div class="meaning-visual">
+                <img src="synity_v2_01.png" alt="Logo meaning">
+            </div>
+            <div class="meaning-content">
+                <h3>Ý nghĩa từng yếu tố</h3>
+
+                <div class="meaning-item">
+                    <div class="meaning-icon">↗</div>
+                    <div class="meaning-text">
+                        <h4>Nét Y vươn lên</h4>
+                        <p>Khát vọng phát triển, tăng trưởng sau chuyển đổi số</p>
+                    </div>
+                </div>
+
+                <div class="meaning-item">
+                    <div class="meaning-icon">◎</div>
+                    <div class="meaning-text">
+                        <h4>Chữ Y cuối cùng</h4>
+                        <p>Điểm đến, kết quả của hành trình - từ hỗn loạn đến trật tự</p>
+                    </div>
+                </div>
+
+                <div class="meaning-item">
+                    <div class="meaning-icon">∿</div>
+                    <div class="meaning-text">
+                        <h4>Đường cong mềm mại</h4>
+                        <p>Linh hoạt trong tiếp cận, không cứng nhắc</p>
+                    </div>
+                </div>
+
+                <div class="meaning-item">
+                    <div class="meaning-icon">⊕</div>
+                    <div class="meaning-text">
+                        <h4>Kết nối từ thân chữ</h4>
+                        <p>Công nghệ gắn liền với doanh nghiệp, không tách rời</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section id="colors">
+        <div class="section-header">
+            <p class="section-label">03 — Màu sắc</p>
+            <h2>Bảng màu thương hiệu</h2>
+            <p>Bảng màu tối cao cấp thể hiện sự chuyên nghiệp và công nghệ tiên tiến</p>
+        </div>
+
+        <div class="colors-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #0a0e1a;"></div>
+                <div class="color-info">
+                    <div class="color-name">Navy Dark</div>
+                    <div class="color-hex">#0A0E1A</div>
+                    <div class="color-usage">Nền chính, background</div>
+                </div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #0f1629;"></div>
+                <div class="color-info">
+                    <div class="color-name">Navy</div>
+                    <div class="color-hex">#0F1629</div>
+                    <div class="color-usage">Cards, sections</div>
+                </div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #3b82f6;"></div>
+                <div class="color-info">
+                    <div class="color-name">Blue Accent</div>
+                    <div class="color-hex">#3B82F6</div>
+                    <div class="color-usage">Links, highlights</div>
+                </div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #ffffff;"></div>
+                <div class="color-info">
+                    <div class="color-name">White</div>
+                    <div class="color-hex">#FFFFFF</div>
+                    <div class="color-usage">Text, logo trên nền tối</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section id="typography">
+        <div class="section-header">
+            <p class="section-label">04 — Typography</p>
+            <h2>Kiểu chữ</h2>
+            <p>Inter - Font chữ geometric sans-serif hiện đại, dễ đọc trên mọi nền tảng</p>
+        </div>
+
+        <div class="typo-display">
+            <div class="typo-sample">
+                <p class="typo-label">Heading</p>
+                <p class="typo-heading">Kiến trúc sư công nghệ</p>
+            </div>
+            <div class="typo-sample">
+                <p class="typo-label">Subheading</p>
+                <p class="typo-subheading">Chuyển đổi số toàn diện cho doanh nghiệp SME</p>
+            </div>
+            <div class="typo-sample">
+                <p class="typo-label">Body</p>
+                <p class="typo-body">Sở hữu hệ thống tự hành đã giúp 3 doanh nghiệp Đào Tạo & Dịch Vụ tự động hóa 80% quy trình, tiết kiệm hàng chục triệu mỗi tháng trong 90 ngày.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications">
+        <div class="section-header">
+            <p class="section-label">05 — Ứng dụng</p>
+            <h2>Ứng dụng thương hiệu</h2>
+            <p>Logo và nhận diện thương hiệu trên các điểm chạm</p>
+        </div>
+
+        <div class="mockups-grid">
+            <div class="mockup-card large">
+                <img src="synity_ceremony_2ref.png" alt="Event">
+                <div class="mockup-label">Sự kiện & Hội nghị</div>
+            </div>
+            <div class="mockup-card">
+                <img src="synity_mockup_stationery4.png" alt="Stationery">
+                <div class="mockup-label">Văn phòng phẩm</div>
+            </div>
+            <div class="mockup-card">
+                <img src="synity_mockup_01.png" alt="Business Card">
+                <div class="mockup-label">Name card</div>
+            </div>
+            <div class="mockup-card">
+                <img src="synity_mockup_presentation.png" alt="Presentation">
+                <div class="mockup-label">Presentation</div>
+            </div>
+            <div class="mockup-card">
+                <img src="synity_mockup_meeting.png" alt="Meeting">
+                <div class="mockup-label">Phòng họp</div>
+            </div>
+            <div class="mockup-card">
+                <img src="synity_mockup_03.png" alt="Office">
+                <div class="mockup-label">Văn phòng</div>
+            </div>
+            <div class="mockup-card">
+                <img src="synity_mockup_tshirt.png" alt="Apparel">
+                <div class="mockup-label">Đồng phục</div>
+            </div>
+            <div class="mockup-card">
+                <img src="synity_mockup_lanyard.png" alt="Lanyard">
+                <div class="mockup-label">Thẻ sự kiện</div>
+            </div>
+            <div class="mockup-card">
+                <img src="synity_mockup_vehicle.png" alt="Vehicle">
+                <div class="mockup-label">Xe công ty</div>
+            </div>
+            <div class="mockup-card large">
+                <img src="synity_mockup_social.png" alt="Social Media">
+                <div class="mockup-label">Social Media Banner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules">
+        <div class="section-header">
+            <p class="section-label">06 — Quy tắc</p>
+            <h2>Quy tắc sử dụng</h2>
+            <p>Đảm bảo tính nhất quán của thương hiệu</p>
+        </div>
+
+        <div class="rules-grid">
+            <div class="rule-card do">
+                <div class="rule-header">
+                    <div class="rule-icon">✓</div>
+                    <div class="rule-title">Nên làm</div>
+                </div>
+                <ul class="rule-list">
+                    <li>Sử dụng logo trắng trên nền tối (navy, đen)</li>
+                    <li>Sử dụng logo navy trên nền sáng (trắng, xám nhạt)</li>
+                    <li>Giữ khoảng trống tối thiểu = chiều cao chữ S</li>
+                    <li>Dùng file vector (SVG, AI) cho in ấn</li>
+                    <li>Giữ nguyên tỷ lệ logo khi resize</li>
+                    <li>Sử dụng bảng màu chính thức</li>
+                </ul>
+            </div>
+
+            <div class="rule-card dont">
+                <div class="rule-header">
+                    <div class="rule-icon">✕</div>
+                    <div class="rule-title">Không nên làm</div>
+                </div>
+                <ul class="rule-list">
+                    <li>Thay đổi màu sắc logo ngoài quy định</li>
+                    <li>Xoay, nghiêng hoặc bóp méo logo</li>
+                    <li>Thêm hiệu ứng shadow, glow, 3D</li>
+                    <li>Đặt logo trên nền nhiễu hoặc ảnh phức tạp</li>
+                    <li>Tách rời chữ Y flourish khỏi wordmark</li>
+                    <li>Sử dụng logo với kích thước quá nhỏ (&lt;24px)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 SYNITY. Brand Guidelines v1.0</p>
+        <p style="margin-top: 0.5rem; color: var(--gray-500);">Kiến trúc sư công nghệ & Chuyển đổi số toàn diện</p>
+    </footer>
+</body>
+</html>
